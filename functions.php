@@ -1,6 +1,19 @@
 <?php
-//dynamic title tag support
-add_theme_support( 'title_tag' );
+function blue_theme_support(){
+    //dynamic title tag support
+    add_theme_support( 'title-tag' );
+
+}
+add_action( 'after_setup_theme', 'blue_theme_support' );
+
+function blue_menus(){
+    //says where menus are located
+    $locations = array(
+        'primary'=> "Desktop Primary Left Sidebar",
+        'footer'=> "Footer Menu"
+    );
+    register_nav_menus( $locations );
+}
 
 function blue_register_styles(){
     $version = wp_get_theme()->get('Version'); 
