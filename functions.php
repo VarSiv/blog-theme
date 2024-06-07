@@ -14,6 +14,7 @@ function blue_menus(){
     );
     register_nav_menus( $locations );
 }
+add_action( 'init', 'blue_menus' );
 
 function blue_register_styles(){
     $version = wp_get_theme()->get('Version'); 
