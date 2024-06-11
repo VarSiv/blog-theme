@@ -35,4 +35,32 @@ function blue_register_scripts(){
 }
 add_action('wp_enqueue_scripts', 'blue_register_scripts');
 
+function blue_widget_areas(){
+    register_sidebar(
+        array(
+            'before_title'=>'',
+            'after_title'=>'',
+            'before_widget'=>'<ul class="social-list list-inline py-3 mx-auto">',
+            'after_widget'=>'</ul>',
+            'name'=>'Sidebar widgets',
+            'id'=>'sidebar1',
+            'description'=>'Sidebar widget area'
+        )
+    );
+
+    register_sidebar(
+        array(
+            'before_title'=>'',
+            'after_title'=>'',
+            'before_widget'=>'',
+            'after_widget'=>'',
+            'name'=>'Footer widgets',
+            'id'=>'footer1',
+            'description'=>'bottom widget area'
+        )
+    );
+}
+
+add_action( 'widgets_init',  'blue_widget_areas');
 ?>
+
